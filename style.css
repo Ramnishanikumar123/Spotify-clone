@@ -1,4 +1,4 @@
-body{
+ body{
     font-family: "Montserrat", sans-serif;
     margin: 0;
     background-color: black;
@@ -138,9 +138,9 @@ a{
 
 }
 .sticky-nav-icons img{
-    /* height: 2rem;
-    width: 2rem; */
-    margin-left: 0.5rem;
+     height: 2rem;
+    width: 2rem; 
+     margin-left: 0.5rem;
 }
 
 .sticky-nav-options{
@@ -153,11 +153,7 @@ a{
     margin-right: 1rem;
 }
 
-@media(max-width: 1000px){
-    .hide{
-        display: none;
-    }
-}
+
 
 .card{
     background-color: #232323;
@@ -181,10 +177,10 @@ a{
     border-radius:0.5rem ;
 
 }
-/* .card :hover{
+ .card :hover{
     opacity: 1;
-} */
-.card-title{
+} 
+ .card-title{
     font-weight: 600;
 }
 .card-info{
@@ -265,3 +261,169 @@ a{
 
 }
 
+
+
+
+@media (max-width: 1200px) {
+    .sidebar {
+        flex: 0.3;
+    }
+    .main-content {
+        flex: 0.7;
+    }
+    .cards-container {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+}
+
+@media (max-width: 992px) {
+    .sidebar {
+        flex: 0.35;
+    }
+    .main-content {
+        flex: 0.65;
+    }
+}
+
+@media (max-width: 768px) {
+    .main {
+        flex-direction: column;
+    }
+    .sidebar {
+        flex: 0.1;
+        flex-direction: row;
+        padding: 10px;
+        width: 100%;
+    }
+    .nav {
+        display: flex;
+        flex: 1;
+        justify-content: space-around;
+    }
+    .library {
+        display: none;
+    }
+    .main-content {
+        flex: 1;
+        padding: 10px;
+    }
+    .cards-container {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        gap: 10px;
+    }
+    .sticky-nav-options .badge {
+        display: none;
+    }
+    .music-player {
+        height: 60px;
+    }
+    .player-controls {
+        gap: 15px;
+    }
+}
+
+@media (max-width: 576px) {
+    .sidebar {
+        position: fixed;
+        bottom: 60px;
+        z-index: 100;
+        background-color: #000000;
+    }
+    .main-content {
+        padding-bottom: 80px;
+    }
+    .cards-container {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    }
+    .sticky-nav-options .fa-user {
+        display: none;
+    }
+    .player {
+        flex: 0.6;
+    }
+    .album, .controls {
+        flex: 0.2;
+    }
+}
+
+@media (max-width: 400px) {
+    .cards-container {
+        grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    }
+    .card-title, .card-info {
+        font-size: 12px;
+    }
+    .player-controls {
+        gap: 10px;
+    }
+    .player-control-icon {
+        height: 16px;
+    }
+    .curr-time, .tot-time {
+        font-size: 10px;
+    }
+}
+
+
+
+
+.mobile-menu-btn {
+    display: none;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 1000;
+    background: #000;
+    border: none;
+    color: white;
+    font-size: 24px;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .mobile-menu-btn {
+        display: block;
+    }
+    
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 70%;
+        height: 100%;
+        z-index: 999;
+        padding-top: 60px;
+        overflow-y: auto;
+    }
+    
+    .sidebar.active {
+        left: 0;
+    }
+    
+    .main-content {
+        margin-left: 0;
+        padding-top: 60px;
+    }
+    
+    .nav {
+        flex-direction: column;
+    }
+    
+    .library {
+        display: block;
+    }
+}
+
+@media (max-width: 576px) {
+    .sidebar {
+        width: 80%;
+    }
+}
+
+@media (max-width: 400px) {
+    .sidebar {
+        width: 90%;
+    }
+}
